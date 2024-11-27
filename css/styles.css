@@ -1,0 +1,118 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+    font-family: Rubik, sans-serif;
+    background-color: #1e4a8b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Header and Footer Styling */
+header, footer {
+    background-color: #091a33;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+}
+
+/* Controls Section */
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 0;
+}
+
+/* Container for Buttons */
+#button-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 0.5em;
+}
+
+/* Styling for Buttons */
+#controls button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+}
+
+/* Instructions styling */
+#instructions {
+    margin-top: 0.5em;
+    font-size: 1em;
+    color: #ffffff;
+}
+
+/* Bingo Grid Container */
+#bingo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(50px, 1fr)); /* Dynamic width */
+    gap: 5px;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    justify-content: center;
+}
+
+/* Bingo cell */
+.bingo-cell {
+    aspect-ratio: 1 / 1; /* Maintain square cells */
+    width: 100%; /* Full width of grid cell */
+    border: 1px solid #4c4c4c;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    background-color: #ffffff;
+    color: #091a33;
+    font-size: calc(0.8em + 1vw); /* Responsive font size */
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bingo-cell:hover {
+    background-color: #f0f0f0;
+}
+
+.bingo-cell.marked {
+    background-color: #091a33; /* Navy */
+    color: #ffffff;
+}
+
+.bingo-cell.winning-cell {
+    background-color: gold;
+    color: white;
+}
+
+/* Message Styling */
+#message-container {
+    text-align: center;
+    font-size: 1.5em;
+    color: #e60000;
+    margin-top: 20px;
+}
+
+/* Media Query for Small Devices */
+@media (max-width: 600px) {
+    #bingo-grid {
+        grid-template-columns: repeat(5, minmax(45px, 1fr));
+        gap: 3px;
+    }
+
+    .bingo-cell {
+        font-size: calc(0.7em + 1vw);
+    }
+}
